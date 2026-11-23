@@ -86,35 +86,44 @@ button,input,textarea,select{max-width:100%;font:inherit}
 @keyframes heartBeat{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.13)}}
 @media(max-width:480px){.vault-loader-inner{padding:14px 8px;gap:10px}.vault-console{font-size:9px}.vault-eye-stage{height:160px}.vault-eye-art{font-size:3.5px}.vault-loader-title{font-size:11px;letter-spacing:.16em}.vault-loader-status{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.vault-console-line,.vault-console-footer,.vault-eye-art,.vault-heart{animation:none;opacity:1;clip-path:none;transform:none}}
-</style></head><body><div id="vault-loader" role="status" aria-live="polite"><div class="vault-loader-inner"><div class="vault-console" aria-hidden="true"><div class="vault-console-line">[SYS://FRAGILES_VAULT] INITIALIZING VISUAL INTERFACE</div><div class="vault-console-line">[00:00:01] RENDERING OPTICAL ARRAY ............ OK</div><div class="vault-console-line">[00:00:02] SYMBOL MATRIX / DEPTH MAP .......... OK</div><div class="vault-console-line">[00:00:03] HEARTBEAT SIGNAL .................. FOUND</div></div><div class="vault-eye-stage" aria-hidden="true"><svg class="vault-eye-art" viewBox="0 0 900 360" role="img" aria-label="A detailed eye with a black pupil" xmlns="http://www.w3.org/2000/svg">
+</style></head><body><div id="vault-loader" role="status" aria-live="polite"><div class="vault-loader-inner"><div class="vault-console" aria-hidden="true"><div class="vault-console-line">[SYS://FRAGILES_VAULT] INITIALIZING VISUAL INTERFACE</div><div class="vault-console-line">[00:00:01] RENDERING OPTICAL ARRAY ............ OK</div><div class="vault-console-line">[00:00:02] SYMBOL MATRIX / DEPTH MAP .......... OK</div><div class="vault-console-line">[00:00:03] HEARTBEAT SIGNAL .................. FOUND</div></div><div class="vault-eye-stage" aria-hidden="true"><svg class="vault-eye-art" viewBox="0 0 900 360" role="img" aria-label="An eye formed from letters and symbols, with a solid black pupil" xmlns="http://www.w3.org/2000/svg">
 <defs>
- <linearGradient id="sclera" x1="0" y1="0" x2="0.15" y2="1"><stop stop-color="#fff" offset="0"/><stop stop-color="#e9dff0" offset=".55"/><stop stop-color="#a98caf" offset="1"/></linearGradient>
- <radialGradient id="iris" cx="48%" cy="48%" r="55%"><stop stop-color="#09060d" offset="0"/><stop stop-color="#09060d" offset=".19"/><stop stop-color="#3b1557" offset=".205"/><stop stop-color="#8c42b5" offset=".43"/><stop stop-color="#d39af0" offset=".62"/><stop stop-color="#52216e" offset=".78"/><stop stop-color="#160d20" offset="1"/></radialGradient>
- <radialGradient id="shine" cx="35%" cy="25%" r="70%"><stop stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
- <clipPath id="eyeClip"><path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z"/></clipPath>
- <filter id="eyeGlow" x="-30%" y="-50%" width="160%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+ <clipPath id="glyphEyeClip"><path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z"/></clipPath>
+ <radialGradient id="glyphIris"><stop offset="0" stop-color="#07050a"/><stop offset=".205" stop-color="#07050a"/><stop offset=".21" stop-color="#311044"/><stop offset=".52" stop-color="#a855f7"/><stop offset=".78" stop-color="#e2b8ff"/><stop offset="1" stop-color="#341447"/></radialGradient>
+ <pattern id="eyeGlyphs" width="92" height="34" patternUnits="userSpaceOnUse">
+  <text x="0" y="13" fill="#e7c9fa" font-family="monospace" font-size="12" font-weight="bold">/\|{}[]&lt;&gt;</text>
+  <text x="7" y="29" fill="#a96bd0" font-family="monospace" font-size="11">01xX*+=:;.</text>
+ </pattern>
+ <pattern id="irisGlyphs" width="64" height="28" patternUnits="userSpaceOnUse">
+  <text x="0" y="12" fill="#f0d7ff" font-family="monospace" font-size="12" font-weight="bold">0X*+{}[]</text>
+  <text x="8" y="25" fill="#4a1a67" font-family="monospace" font-size="10">/\\|:;.</text>
+ </pattern>
+ <filter id="glyphEyeGlow"><feGaussianBlur stdDeviation="8"/></filter>
 </defs>
-<path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z" fill="#a855f7" opacity=".28" filter="url(#eyeGlow)"/>
-<path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z" fill="url(#sclera)" stroke="#d6a8f5" stroke-width="9"/>
-<g clip-path="url(#eyeClip)">
- <path d="M65 170 Q450 -70 835 170" fill="none" stroke="#9b6e9d" stroke-width="12" opacity=".55"/>
- <path d="M65 192 Q450 430 835 192" fill="none" stroke="#8f6b9b" stroke-width="9" opacity=".38"/>
- <g fill="none" stroke="#b77b9f" stroke-width="2" opacity=".35">
-  <path d="M120 170l-32-28m53 18-23-39m75 30-14-45m-5 83-45 25m92-23-29 34M780 170l32-28m-53 18 23-39m-75 30 14-45m5 83 45 25m-92-23 29 34"/>
+<path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z" fill="none" stroke="#b76be8" stroke-width="22" opacity=".4" filter="url(#glyphEyeGlow)"/>
+<g clip-path="url(#glyphEyeClip)">
+ <rect width="900" height="360" fill="#130b1b"/>
+ <rect width="900" height="360" fill="url(#eyeGlyphs)" opacity=".98"/>
+ <path d="M55 180 Q450 -70 845 180 Q450 430 55 180Z" fill="none" stroke="#f0d7ff" stroke-width="5"/>
+ <circle cx="450" cy="180" r="137" fill="url(#glyphIris)" stroke="#d9a5f5" stroke-width="5"/>
+ <circle cx="450" cy="180" r="127" fill="url(#irisGlyphs)" opacity=".85"/>
+ <g fill="none" stroke="#f0d7ff" stroke-width="3" opacity=".75">
+  <circle cx="450" cy="180" r="111" stroke-dasharray="2 7"/>
+  <circle cx="450" cy="180" r="91" stroke-dasharray="1 5"/>
+  <path d="M450 54v29m0 194v29M324 180h29m194 0h29M361 91l21 21m136 136 21 21M539 91l-21 21m-136 136-21 21"/>
  </g>
- <circle cx="450" cy="180" r="132" fill="#170d20" opacity=".2"/>
- <circle cx="450" cy="180" r="119" fill="url(#iris)" stroke="#28102f" stroke-width="8"/>
- <g stroke="#e6b5ff" stroke-width="4" opacity=".5" stroke-linecap="round">
-  <path d="M450 67v26m0 188v-26M337 180h26m174 0h-26M370 100l18 23m124 114 18 23M530 100l-18 23m-124 114-18 23"/>
-  <path d="M410 72l9 28m71 160 9 28M490 72l-9 28m-71 160-9 28M350 130l25 14m150 72 25 14M550 130l-25 14m-150 72-25 14"/>
+ <g fill="#e7c9fa" font-family="monospace" font-size="17" font-weight="bold" text-anchor="middle" opacity=".92">
+  <text x="450" y="68">/ X * + 0 1 + * X \</text>
+  <text x="450" y="302">[ ] { } &lt; &gt; / \ |</text>
+  <text x="280" y="184">01X*+=</text><text x="620" y="184">=+*X10</text>
  </g>
- <circle cx="450" cy="180" r="48" fill="#000000" stroke="#120b16" stroke-width="5"/>
- <ellipse cx="416" cy="135" rx="28" ry="16" fill="#fff" opacity=".9" transform="rotate(-28 416 135)"/>
- <circle cx="485" cy="215" r="9" fill="#fff" opacity=".7"/>
- <circle cx="450" cy="180" r="116" fill="url(#shine)"/>
+ <!-- A true solid-black pupil, deliberately kept clear of the character texture. -->
+ <circle cx="450" cy="180" r="49" fill="#000000" stroke="#100b14" stroke-width="5"/>
+ <ellipse cx="418" cy="135" rx="25" ry="14" fill="#ffffff" opacity=".92" transform="rotate(-28 418 135)"/>
+ <circle cx="483" cy="214" r="8" fill="#ffffff" opacity=".72"/>
 </g>
-<path d="M48 180 Q450 -90 852 180" fill="none" stroke="#f0d7ff" stroke-width="12" stroke-linecap="round"/>
-<path d="M48 180 Q450 450 852 180" fill="none" stroke="#6d3b7e" stroke-width="8" stroke-linecap="round"/>
+<path d="M48 180 Q450 -90 852 180" fill="none" stroke="#f2dfff" stroke-width="9" stroke-linecap="round"/>
+<path d="M48 180 Q450 450 852 180" fill="none" stroke="#9d61ba" stroke-width="7" stroke-linecap="round"/>
 </svg><div class="vault-heart">♥</div></div><div class="vault-loader-title">F R A G I L E S   V A U L T</div><div class="vault-loader-status vault-console-footer">[ ACCESS GRANTED ] &gt; FOLLOW THE SIGNAL_</div></div></div><div class="app"><div class="rail"><div class="logo">F</div></div><aside class="side"><div class="server"><div class="logo">F</div>Fragiles Vault^_^</div><nav aria-label="Channels"><div class="group">Mods</div><button class="ch" data-ch="all">all mods<span class="count" id="c-all"></span></button><button class="ch" data-ch="working">working<span class="count" id="c-working"></span></button><button class="ch" data-ch="broken">not working<span class="count" id="c-broken"></span></button><div class="group">More</div><button class="ch" data-ch="upload">upload</button><button class="ch" data-ch="credits">credits</button><button class="ch" data-ch="chat">chat<span class="count" id="c-chat"></span></button></nav><a class="join" href="#" aria-disabled="true" onclick="return false">Join Discord</a></aside><main class="main"><header class="top"><span id="title">all mods</span><input id="q" type="search" placeholder="Search mods"></header><div class="content"><div class="wrap"><div class="beta-banner" role="status"><span class="beta-tag">BETA</span><span><strong>Early access</strong> — things may change.</span></div><section id="v-mods"><div class="feed" id="feed">Loading mods...</div></section><section id="v-upload" hidden><p class="intro">Add a mod to the store. Upload a file (max 50 MB) or provide a download link.</p><form id="add"><label>NAME<input id="n" type="text" required maxlength="100"></label><label>WORKING?<select id="w"><option value="true">Working</option><option value="false">Not working</option></select></label><label>DESCRIPTION<textarea id="d" rows="3" required maxlength="2000"></textarea></label><label>DOWNLOAD LINK (optional if uploading a file)<input id="l" type="url" placeholder="https://"></label><label>MOD FILE<input id="modfile" type="file" accept=".zip,.7z,.rar,.dll,.apk,.unity3d,.bundle"></label><label>UPLOAD PASSWORD<input id="pw" type="password" required autocomplete="off"></label><p class="err" id="err" role="alert"></p><button class="save" type="submit">Add mod</button></form></section><section id="v-credits" hidden><p class="intro">The people behind Fragiles Vault^_^.</p><div id="credits" class="feed"></div></section><section id="v-chat" hidden><p class="intro">Public community chat — messages are visible to everyone.</p><p class="chat-warning">Keep personal information private. Don’t share your real name, address, school, phone number, or passwords. Be respectful. Profanity and slurs are blocked automatically.</p><div id="chat-feed" class="chat-feed" aria-live="polite"><p class="empty">Loading chat...</p></div><form id="chat-form" class="chat-form"><label>DISPLAY NAME<input id="chat-name" type="text" maxlength="24" minlength="2" required autocomplete="nickname" placeholder="Choose a nickname"></label><div class="chat-compose"><input id="chat-message" type="text" maxlength="500" required placeholder="Message Fragiles Vault..." autocomplete="off"><button class="save" type="submit">Send</button></div><p class="err" id="chat-err" role="alert"></p></form></section><section id="admin-panel" class="admin-panel" hidden><div class="admin-card" role="dialog" aria-modal="true" aria-labelledby="admin-title"><h2 id="admin-title">Vault admin</h2><p class="intro">Delete an upload from the vault. This also removes its stored file when it has one.</p><label>ADMIN PASSWORD<input id="admin-password" type="password" autocomplete="off" placeholder="Enter upload password"></label><p class="err" id="admin-error" role="alert"></p><div class="admin-list" id="admin-list"></div><div class="admin-actions"><button type="button" class="admin-close" id="admin-close">Close</button></div></div></section></div></div></main></div><script>
 const URL_BASE="https://mgeduxvgmrtsijcgpnym.supabase.co",PUB="sb_publishable_8PVtSKLKXfJmwtPr--954w_eUbCJspu",ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1nZWR1eHZnbXJ0c2lqY2dwbnltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ0NTMxNjUsImV4cCI6MjExMDAyOTE2NX0.CvTx_lERORmYu5Wbuo0v4t2K685KI6yMgYjE6fpX_Uk";
 const mods=[],credits=[{name:"yourfragilehands.",role:"Creator of all this bullshit"},{name:"Sleepy/hexxy",role:"Provided the original project this site was built from."}],channels={all:{label:"all mods",type:"mods",filter:"all"},working:{label:"working",type:"mods",filter:"true"},broken:{label:"not working",type:"mods",filter:"false"},upload:{label:"upload",type:"upload"},credits:{label:"credits",type:"credits"},chat:{label:"chat",type:"chat"}};
