@@ -76,7 +76,7 @@ button,input,textarea,select{max-width:100%;font:inherit}
 .vault-console-line{opacity:0;white-space:pre-wrap;overflow-wrap:anywhere;animation:consoleLine .35s forwards}
 .vault-console-line:nth-child(1){animation-delay:.25s}.vault-console-line:nth-child(2){animation-delay:.65s}.vault-console-line:nth-child(3){animation-delay:1.05s}.vault-console-line:nth-child(4){animation-delay:1.45s}
 .vault-eye-stage{position:relative;width:min(680px,94vw);max-width:100%;height:clamp(150px,34vw,300px);min-width:0;display:grid;place-items:center;overflow:hidden;perspective:700px}
-.vault-eye-art{width:100%;max-width:100%;height:auto;display:block;margin:0;overflow:visible;white-space:pre;font:700 clamp(4px,.72vw,7px)/1.08 ui-monospace,SFMono-Regular,Consolas,monospace;text-align:center;letter-spacing:0;transform:scale(.72);transform-origin:center;clip-path:inset(50% 0 50% 0);filter:drop-shadow(0 0 10px #a855f766);animation:eyeUnfold 1.7s cubic-bezier(.2,.8,.2,1) .9s forwards,eyeZoom 2.6s cubic-bezier(.65,0,.85,.3) 4.2s forwards}
+.vault-eye-art{width:100%;height:100%;max-width:100%;display:block;overflow:visible;transform:scale(.72);transform-origin:center;clip-path:inset(50% 0 50% 0);filter:drop-shadow(0 0 12px #a855f766);animation:eyeUnfold 1.7s cubic-bezier(.2,.8,.2,1) .9s forwards,eyeZoom 2.6s cubic-bezier(.65,0,.85,.3) 4.2s forwards}
 .vault-heart{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.2);opacity:0;color:#ff8bd6;font:900 clamp(28px,6vw,54px)/1 ui-monospace,monospace;text-shadow:0 0 12px #ff48b8,0 0 35px #d946ef;animation:heartReveal 1.15s ease-out 4.15s forwards,heartBeat .8s ease-in-out 5.1s infinite}
 .vault-console-footer{opacity:0;animation:consoleLine .4s forwards 2s}
 @keyframes consoleLine{to{opacity:1}}
@@ -84,9 +84,47 @@ button,input,textarea,select{max-width:100%;font:inherit}
 @keyframes eyeZoom{0%{transform:scale(1)}100%{transform:scale(3.8);opacity:.12;filter:blur(2px)}}
 @keyframes heartReveal{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}70%{opacity:1;transform:translate(-50%,-50%) scale(1.22)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes heartBeat{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.13)}}
-@media(max-width:480px){.vault-loader-inner{padding:14px 8px;gap:10px}.vault-console{font-size:9px}.vault-eye-stage{height:160px}.vault-eye-art{font-size:4px;line-height:1.08}.vault-loader-title{font-size:11px;letter-spacing:.16em}.vault-loader-status{font-size:10px}}
+@media(max-width:480px){.vault-loader-inner{padding:14px 8px;gap:10px}.vault-console{font-size:9px}.vault-eye-stage{height:160px}.vault-eye-art{font-size:3.5px}.vault-loader-title{font-size:11px;letter-spacing:.16em}.vault-loader-status{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.vault-console-line,.vault-console-footer,.vault-eye-art,.vault-heart{animation:none;opacity:1;clip-path:none;transform:none}}
-</style></head><body><div id="vault-loader" role="status" aria-live="polite"><div class="vault-loader-inner"><div class="vault-console" aria-hidden="true"><div class="vault-console-line">[SYS://FRAGILES_VAULT] INITIALIZING VISUAL INTERFACE</div><div class="vault-console-line">[00:00:01] RENDERING OPTICAL ARRAY ............ OK</div><div class="vault-console-line">[00:00:02] SYMBOL MATRIX / DEPTH MAP .......... OK</div><div class="vault-console-line">[00:00:03] HEARTBEAT SIGNAL .................. FOUND</div></div><div class="vault-eye-stage" aria-hidden="true"><pre class="vault-eye-art" id="vault-eye-art" aria-label="Eye made entirely from letters, numbers and symbols"></pre><div class="vault-heart">♥</div></div><div class="vault-loader-title">F R A G I L E S   V A U L T</div><div class="vault-loader-status vault-console-footer">[ ACCESS GRANTED ] &gt; FOLLOW THE SIGNAL_</div></div></div><div class="app"><div class="rail"><div class="logo">F</div></div><aside class="side"><div class="server"><div class="logo">F</div>Fragiles Vault^_^</div><nav aria-label="Channels"><div class="group">Mods</div><button class="ch" data-ch="all">all mods<span class="count" id="c-all"></span></button><button class="ch" data-ch="working">working<span class="count" id="c-working"></span></button><button class="ch" data-ch="broken">not working<span class="count" id="c-broken"></span></button><div class="group">More</div><button class="ch" data-ch="upload">upload</button><button class="ch" data-ch="credits">credits</button><button class="ch" data-ch="chat">chat<span class="count" id="c-chat"></span></button></nav><a class="join" href="#" aria-disabled="true" onclick="return false">Join Discord</a></aside><main class="main"><header class="top"><span id="title">all mods</span><input id="q" type="search" placeholder="Search mods"></header><div class="content"><div class="wrap"><div class="beta-banner" role="status"><span class="beta-tag">BETA</span><span><strong>Early access</strong> — things may change.</span></div><section id="v-mods"><div class="feed" id="feed">Loading mods...</div></section><section id="v-upload" hidden><p class="intro">Add a mod to the store. Upload a file (max 50 MB) or provide a download link.</p><form id="add"><label>NAME<input id="n" type="text" required maxlength="100"></label><label>WORKING?<select id="w"><option value="true">Working</option><option value="false">Not working</option></select></label><label>DESCRIPTION<textarea id="d" rows="3" required maxlength="2000"></textarea></label><label>DOWNLOAD LINK (optional if uploading a file)<input id="l" type="url" placeholder="https://"></label><label>MOD FILE<input id="modfile" type="file" accept=".zip,.7z,.rar,.dll,.apk,.unity3d,.bundle"></label><label>UPLOAD PASSWORD<input id="pw" type="password" required autocomplete="off"></label><p class="err" id="err" role="alert"></p><button class="save" type="submit">Add mod</button></form></section><section id="v-credits" hidden><p class="intro">The people behind Fragiles Vault^_^.</p><div id="credits" class="feed"></div></section><section id="v-chat" hidden><p class="intro">Public community chat — messages are visible to everyone.</p><p class="chat-warning">Keep personal information private. Don’t share your real name, address, school, phone number, or passwords. Be respectful. Profanity and slurs are blocked automatically.</p><div id="chat-feed" class="chat-feed" aria-live="polite"><p class="empty">Loading chat...</p></div><form id="chat-form" class="chat-form"><label>DISPLAY NAME<input id="chat-name" type="text" maxlength="24" minlength="2" required autocomplete="nickname" placeholder="Choose a nickname"></label><div class="chat-compose"><input id="chat-message" type="text" maxlength="500" required placeholder="Message Fragiles Vault..." autocomplete="off"><button class="save" type="submit">Send</button></div><p class="err" id="chat-err" role="alert"></p></form></section><section id="admin-panel" class="admin-panel" hidden><div class="admin-card" role="dialog" aria-modal="true" aria-labelledby="admin-title"><h2 id="admin-title">Vault admin</h2><p class="intro">Delete an upload from the vault. This also removes its stored file when it has one.</p><label>ADMIN PASSWORD<input id="admin-password" type="password" autocomplete="off" placeholder="Enter upload password"></label><p class="err" id="admin-error" role="alert"></p><div class="admin-list" id="admin-list"></div><div class="admin-actions"><button type="button" class="admin-close" id="admin-close">Close</button></div></div></section></div></div></main></div><script>
+</style></head><body><div id="vault-loader" role="status" aria-live="polite"><div class="vault-loader-inner"><div class="vault-console" aria-hidden="true"><div class="vault-console-line">[SYS://FRAGILES_VAULT] INITIALIZING VISUAL INTERFACE</div><div class="vault-console-line">[00:00:01] RENDERING OPTICAL ARRAY ............ OK</div><div class="vault-console-line">[00:00:02] SYMBOL MATRIX / DEPTH MAP .......... OK</div><div class="vault-console-line">[00:00:03] HEARTBEAT SIGNAL .................. FOUND</div></div><div class="vault-eye-stage" aria-hidden="true"><svg class="vault-eye-art" viewBox="0 0 900 360" role="img" aria-label="An eye formed from letters and symbols, with a solid black pupil" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <clipPath id="glyphEyeClip"><path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z"/></clipPath>
+ <radialGradient id="glyphIris"><stop offset="0" stop-color="#07050a"/><stop offset=".205" stop-color="#07050a"/><stop offset=".21" stop-color="#311044"/><stop offset=".52" stop-color="#a855f7"/><stop offset=".78" stop-color="#e2b8ff"/><stop offset="1" stop-color="#341447"/></radialGradient>
+ <pattern id="eyeGlyphs" width="92" height="34" patternUnits="userSpaceOnUse">
+  <text x="0" y="13" fill="#e7c9fa" font-family="monospace" font-size="12" font-weight="bold">/\|{}[]&lt;&gt;</text>
+  <text x="7" y="29" fill="#a96bd0" font-family="monospace" font-size="11">01xX*+=:;.</text>
+ </pattern>
+ <pattern id="irisGlyphs" width="64" height="28" patternUnits="userSpaceOnUse">
+  <text x="0" y="12" fill="#f0d7ff" font-family="monospace" font-size="12" font-weight="bold">0X*+{}[]</text>
+  <text x="8" y="25" fill="#4a1a67" font-family="monospace" font-size="10">/\\|:;.</text>
+ </pattern>
+ <filter id="glyphEyeGlow"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<path d="M48 180 Q450 -90 852 180 Q450 450 48 180Z" fill="none" stroke="#b76be8" stroke-width="22" opacity=".4" filter="url(#glyphEyeGlow)"/>
+<g clip-path="url(#glyphEyeClip)">
+ <rect width="900" height="360" fill="#130b1b"/>
+ <rect width="900" height="360" fill="url(#eyeGlyphs)" opacity=".98"/>
+ <path d="M55 180 Q450 -70 845 180 Q450 430 55 180Z" fill="none" stroke="#f0d7ff" stroke-width="5"/>
+ <circle cx="450" cy="180" r="137" fill="url(#glyphIris)" stroke="#d9a5f5" stroke-width="5"/>
+ <circle cx="450" cy="180" r="127" fill="url(#irisGlyphs)" opacity=".85"/>
+ <g fill="none" stroke="#f0d7ff" stroke-width="3" opacity=".75">
+  <circle cx="450" cy="180" r="111" stroke-dasharray="2 7"/>
+  <circle cx="450" cy="180" r="91" stroke-dasharray="1 5"/>
+  <path d="M450 54v29m0 194v29M324 180h29m194 0h29M361 91l21 21m136 136 21 21M539 91l-21 21m-136 136-21 21"/>
+ </g>
+ <g fill="#e7c9fa" font-family="monospace" font-size="17" font-weight="bold" text-anchor="middle" opacity=".92">
+  <text x="450" y="68">/ X * + 0 1 + * X \</text>
+  <text x="450" y="302">[ ] { } &lt; &gt; / \ |</text>
+  <text x="280" y="184">01X*+=</text><text x="620" y="184">=+*X10</text>
+ </g>
+ <!-- A true solid-black pupil, deliberately kept clear of the character texture. -->
+ <circle cx="450" cy="180" r="49" fill="#000000" stroke="#100b14" stroke-width="5"/>
+ <ellipse cx="418" cy="135" rx="25" ry="14" fill="#ffffff" opacity=".92" transform="rotate(-28 418 135)"/>
+ <circle cx="483" cy="214" r="8" fill="#ffffff" opacity=".72"/>
+</g>
+<path d="M48 180 Q450 -90 852 180" fill="none" stroke="#f2dfff" stroke-width="9" stroke-linecap="round"/>
+<path d="M48 180 Q450 450 852 180" fill="none" stroke="#9d61ba" stroke-width="7" stroke-linecap="round"/>
+</svg><div class="vault-heart">♥</div></div><div class="vault-loader-title">F R A G I L E S   V A U L T</div><div class="vault-loader-status vault-console-footer">[ ACCESS GRANTED ] &gt; FOLLOW THE SIGNAL_</div></div></div><div class="app"><div class="rail"><div class="logo">F</div></div><aside class="side"><div class="server"><div class="logo">F</div>Fragiles Vault^_^</div><nav aria-label="Channels"><div class="group">Mods</div><button class="ch" data-ch="all">all mods<span class="count" id="c-all"></span></button><button class="ch" data-ch="working">working<span class="count" id="c-working"></span></button><button class="ch" data-ch="broken">not working<span class="count" id="c-broken"></span></button><div class="group">More</div><button class="ch" data-ch="upload">upload</button><button class="ch" data-ch="credits">credits</button><button class="ch" data-ch="chat">chat<span class="count" id="c-chat"></span></button></nav><a class="join" href="#" aria-disabled="true" onclick="return false">Join Discord</a></aside><main class="main"><header class="top"><span id="title">all mods</span><input id="q" type="search" placeholder="Search mods"></header><div class="content"><div class="wrap"><div class="beta-banner" role="status"><span class="beta-tag">BETA</span><span><strong>Early access</strong> — things may change.</span></div><section id="v-mods"><div class="feed" id="feed">Loading mods...</div></section><section id="v-upload" hidden><p class="intro">Add a mod to the store. Upload a file (max 50 MB) or provide a download link.</p><form id="add"><label>NAME<input id="n" type="text" required maxlength="100"></label><label>WORKING?<select id="w"><option value="true">Working</option><option value="false">Not working</option></select></label><label>DESCRIPTION<textarea id="d" rows="3" required maxlength="2000"></textarea></label><label>DOWNLOAD LINK (optional if uploading a file)<input id="l" type="url" placeholder="https://"></label><label>MOD FILE<input id="modfile" type="file" accept=".zip,.7z,.rar,.dll,.apk,.unity3d,.bundle"></label><label>UPLOAD PASSWORD<input id="pw" type="password" required autocomplete="off"></label><p class="err" id="err" role="alert"></p><button class="save" type="submit">Add mod</button></form></section><section id="v-credits" hidden><p class="intro">The people behind Fragiles Vault^_^.</p><div id="credits" class="feed"></div></section><section id="v-chat" hidden><p class="intro">Public community chat — messages are visible to everyone.</p><p class="chat-warning">Keep personal information private. Don’t share your real name, address, school, phone number, or passwords. Be respectful. Profanity and slurs are blocked automatically.</p><div id="chat-feed" class="chat-feed" aria-live="polite"><p class="empty">Loading chat...</p></div><form id="chat-form" class="chat-form"><label>DISPLAY NAME<input id="chat-name" type="text" maxlength="24" minlength="2" required autocomplete="nickname" placeholder="Choose a nickname"></label><div class="chat-compose"><input id="chat-message" type="text" maxlength="500" required placeholder="Message Fragiles Vault..." autocomplete="off"><button class="save" type="submit">Send</button></div><p class="err" id="chat-err" role="alert"></p></form></section><section id="admin-panel" class="admin-panel" hidden><div class="admin-card" role="dialog" aria-modal="true" aria-labelledby="admin-title"><h2 id="admin-title">Vault admin</h2><p class="intro">Delete an upload from the vault. This also removes its stored file when it has one.</p><label>ADMIN PASSWORD<input id="admin-password" type="password" autocomplete="off" placeholder="Enter upload password"></label><p class="err" id="admin-error" role="alert"></p><div class="admin-list" id="admin-list"></div><div class="admin-actions"><button type="button" class="admin-close" id="admin-close">Close</button></div></div></section></div></div></main></div><script>
 const URL_BASE="https://mgeduxvgmrtsijcgpnym.supabase.co",PUB="sb_publishable_8PVtSKLKXfJmwtPr--954w_eUbCJspu",ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1nZWR1eHZnbXJ0c2lqY2dwbnltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ0NTMxNjUsImV4cCI6MjExMDAyOTE2NX0.CvTx_lERORmYu5Wbuo0v4t2K685KI6yMgYjE6fpX_Uk";
 const mods=[],credits=[{name:"yourfragilehands.",role:"Creator of all this bullshit"},{name:"Sleepy/hexxy",role:"Provided the original project this site was built from."}],channels={all:{label:"all mods",type:"mods",filter:"all"},working:{label:"working",type:"mods",filter:"true"},broken:{label:"not working",type:"mods",filter:"false"},upload:{label:"upload",type:"upload"},credits:{label:"credits",type:"credits"},chat:{label:"chat",type:"chat"}};
 let current="all";const $=id=>document.getElementById(id);
@@ -163,45 +201,6 @@ window.addEventListener("blur",()=>adminKeys.clear());
 render();loadMods();
 (()=>{if(!matchMedia("(hover:hover) and (pointer:fine)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;const canvas=document.createElement("canvas");canvas.id="osu-cursor-layer";canvas.setAttribute("aria-hidden","true");document.body.append(canvas);const ctx=canvas.getContext("2d");let w=0,h=0,dpr=1,p={x:-100,y:-100};const trail=[];function resize(){dpr=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0)}addEventListener("resize",resize,{passive:true});addEventListener("mousemove",e=>{p={x:e.clientX,y:e.clientY};trail.push({...p,life:1});if(trail.length>28)trail.shift()},{passive:true});addEventListener("blur",()=>{trail.length=0;p={x:-100,y:-100}});resize();function draw(){ctx.clearRect(0,0,w,h);for(let i=trail.length-1;i>=0;i--){const t=trail[i];t.life-=.027;if(t.life<=0){trail.splice(i,1);continue}const f=i/Math.max(1,trail.length-1);ctx.beginPath();ctx.arc(t.x,t.y,2+f*4,0,Math.PI*2);ctx.fillStyle="rgba(180,90,255,"+(t.life*(.12+f*.42))+")";ctx.shadowColor="#b45aff";ctx.shadowBlur=13;ctx.fill()}ctx.shadowBlur=0;if(p.x>=0){ctx.beginPath();ctx.arc(p.x,p.y,5.5,0,Math.PI*2);ctx.fillStyle="#e9c8ff";ctx.shadowColor="#c084fc";ctx.shadowBlur=17;ctx.fill();ctx.shadowBlur=0;ctx.beginPath();ctx.arc(p.x,p.y,10,0,Math.PI*2);ctx.strokeStyle="rgba(192,132,252,.9)";ctx.lineWidth=1.5;ctx.stroke()}requestAnimationFrame(draw)}requestAnimationFrame(draw)})();
 
-
-function buildSymbolEye(){
- const target=document.getElementById("vault-eye-art");if(!target)return;
- const cols=119,rows=39,cx=(cols-1)/2,cy=(rows-1)/2;
- const irisR=11.2,pupilR=4.5;
- const sclera=" .,:;-=+*xX%$@";
- const iris=".:;+=*xX#%@&";
- const pupil="████▓▓▒▒";
- const sparkle="*+";
- let html="";
- for(let y=0;y<rows;y++){
-  for(let x=0;x<cols;x++){
-   const nx=(x-cx)/(cols*.47),ny=(y-cy)/(rows*.47);
-   const eyeLimit=Math.sqrt(Math.max(0,1-nx*nx))*.78;
-   const inside=Math.abs(ny)<=eyeLimit;
-   const d=Math.hypot((x-cx)/1.0,(y-cy)*1.55);
-   let ch=" ",color="transparent";
-   if(inside){
-    const edge=Math.abs(Math.abs(ny)-eyeLimit);
-    if(edge<.055){ch="/\\|";ch=ch[(x+y)%ch.length];color="#edc9ff"}
-    else if(d<pupilR){ch=pupil[(x*3+y*5)%pupil.length];color="#000000"}
-    else if(d<pupilR+1.4){ch="|/\\|";ch=ch[(x+y)%ch.length];color="#160d20"}
-    else if(d<irisR){
-     ch=iris[(x*7+y*3)%iris.length];
-     const ring=(Math.floor(d*1.8)+x+y)%4;
-     color=ring===0?"#f0caff":ring===1?"#d69af7":ring===2?"#a855f7":"#71339a";
-    }else{
-     ch=sclera[(x*5+y*7)%sclera.length];
-     color=edge<.13?"#d7a8ec":(y<cy?"#f2e7fa":"#bda4ca");
-    }
-    if(d<irisR+1&&d>pupilR+1.5&&(x+y*2)%13===0){ch=sparkle[(x+y)%2];color="#f8eaff"}
-   }
-   html+='<span style="color:'+color+'">'+(ch===" "?"&nbsp;":ch)+"</span>";
-  }
-  html+="\n";
- }
- target.innerHTML=html;
-}
-buildSymbolEye();
-\n// Keep the animated text-eye intro on screen until its sequence and page load finish.
+// Keep the animated text-eye intro on screen until its sequence and page load finish.
 (()=>{const loader=document.getElementById("vault-loader");if(!loader)return;let pageReady=document.readyState==="complete";let hidden=false;const started=Date.now();const minimum=7800;const finish=()=>{if(hidden||!pageReady)return;const wait=Math.max(0,minimum-(Date.now()-started));setTimeout(()=>{if(hidden)return;hidden=true;loader.classList.add("is-hidden");setTimeout(()=>loader.remove(),550)},wait)};if(!pageReady)window.addEventListener("load",()=>{pageReady=true;finish()},{once:true});finish()})();
 </script></body></html>
