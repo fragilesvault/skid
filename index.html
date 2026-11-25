@@ -97,15 +97,13 @@ button,input,textarea,select{max-width:100%;font:inherit}
 /* Welcome screen shown after the existing loading sequence */
 #vault-welcome{position:fixed;inset:0;z-index:99998;display:flex;align-items:center;justify-content:center;gap:clamp(20px,7vw,110px);overflow:hidden;padding:24px;background:linear-gradient(112deg,#efa83e 0%,#f58b45 52%,#ff7548 100%);isolation:isolate}
 #vault-welcome:before{content:"";position:absolute;inset:-160px;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22170%22%20height%3D%22170%22%20viewBox%3D%220%200%20447%20447%22%3E%3Cpath%20d%3D%22M85%2080%2080%2091%2080%20359%2088%20373%2096%20379%20108%20383%20341%20383%20358%20375%20365%20367%20368%20359%20368%2090%20366%2084%20359%2075%20347%2068%20337%2066%20110%2066%2097%2070Z%20M105%20282%20108%20279%20119%20285%20120%20287%20144%20298%20150%20299%20152%20301%20156%20301%20159%20303%20182%20309%20211%20313%20245%20313%20282%20307%20310%20298%20341%20283%20343%20285%20343%20352%20341%20355%20337%20357%20303%20358%20111%20357%20107%20355%20105%20351Z%20M105%20141%20108%20138%20163%20138%20165%20140%20165%20231%20167%20234%20184%20235%20191%20233%20191%20140%20193%20138%20255%20138%20258%20142%20258%20233%20264%20235%20278%20235%20283%20233%20283%20141%20286%20138%20340%20138%20343%20140%20343%20249%20340%20253%20329%20260%20295%20276%20266%20284%20244%20287%20209%20287%20193%20285%20172%20280%20145%20270%20124%20259%20105%20245Z%20M105%2099%20106%2096%20112%2092%20335%2092%20339%2093%20342%2096%20343%20109%20341%20112%20107%20112%20105%20109Z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");background-size:170px 170px;opacity:.42;transform:rotate(-7deg) scaleX(-1);animation:rrPatternDrift 16s linear infinite}
-.welcome-person{position:relative;align-self:flex-end;width:clamp(150px,25vw,290px);height:min(78vh,570px);flex:none}
-.welcome-head{position:absolute;top:0;left:34%;width:31%;height:19%;background:#080609;border-radius:48% 48% 45% 45%;transform:rotate(-8deg)}
-.welcome-body{position:absolute;top:19%;left:22%;width:55%;height:73%;background:#080609;border-radius:30% 30% 4% 4%;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
-.welcome-arm{position:absolute;top:29%;width:13%;height:63%;background:#080609;border-radius:45%}
-.welcome-arm.left{left:17%;transform:rotate(4deg)}.welcome-arm.right{right:13%;transform:rotate(-4deg)}
-.welcome-hand{position:absolute;top:87%;width:22%;height:10%;background:#080609;border-radius:48% 48% 38% 38%;z-index:2}
-.welcome-hand.left{left:9%;transform:rotate(9deg)}.welcome-hand.right{right:5%;transform:rotate(-9deg)}
-.welcome-hand i{position:absolute;top:48%;width:19%;height:68%;background:#080609;border-radius:0 0 45% 45%;transform-origin:top center}
-.welcome-hand i:nth-child(1){left:4%;height:57%;transform:rotate(9deg)}.welcome-hand i:nth-child(2){left:27%;height:76%;transform:rotate(3deg)}.welcome-hand i:nth-child(3){left:51%;height:72%;transform:rotate(-3deg)}.welcome-hand i:nth-child(4){left:75%;height:55%;transform:rotate(-10deg)}
+.welcome-person{position:relative;align-self:flex-end;width:clamp(170px,25vw,290px);height:min(68vh,470px);flex:none}
+.welcome-head{position:absolute;z-index:2;top:1%;left:30%;width:40%;height:23%;background:#080609;border-radius:38% 38% 34% 34%;transform:rotate(-4deg)}
+.welcome-body{position:absolute;top:23%;left:19%;width:62%;height:54%;background:#080609;border-radius:24% 24% 12% 12%;clip-path:none}
+.welcome-arm{position:absolute;z-index:1;top:29%;width:17%;height:46%;background:#080609;border-radius:48%}
+.welcome-arm.left{left:8%;transform:rotate(7deg)}.welcome-arm.right{right:6%;transform:rotate(-7deg)}
+.welcome-hand{position:absolute;z-index:3;top:70%;width:20%;height:11%;background:#080609;border-radius:48% 48% 44% 44%}
+.welcome-hand.left{left:6%;transform:rotate(8deg)}.welcome-hand.right{right:4%;transform:rotate(-8deg)}
 .welcome-card{width:min(390px,48vw);min-height:340px;padding:26px 22px 18px;background:#fffaf5;color:#31251e;box-shadow:0 10px 30px #8a3b2450;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px}
 .welcome-brand{position:relative;align-self:center;width:100%;padding:0 0 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#ed5426;font-weight:1000;line-height:.78;letter-spacing:-.08em}
 .welcome-word{order:1;font-size:clamp(40px,6vw,65px);text-shadow:2px 2px 0 #fff}
@@ -139,7 +137,7 @@ button,input,textarea,select{max-width:100%;font:inherit}
   <div class="rr-status">Loading into vault</div>
  </div>
 </div><div id="vault-welcome" aria-label="Welcome to Fragiles Vault">
- <div class="welcome-person" aria-hidden="true"><div class="welcome-head"></div><div class="welcome-body"></div><div class="welcome-arm left"></div><div class="welcome-arm right"></div><div class="welcome-hand left"><i></i><i></i><i></i><i></i></div><div class="welcome-hand right"><i></i><i></i><i></i><i></i></div></div>
+ <div class="welcome-person" aria-hidden="true"><div class="welcome-head"></div><div class="welcome-body"></div><div class="welcome-arm left"></div><div class="welcome-arm right"></div><div class="welcome-hand left"></div><div class="welcome-hand right"></div></div>
  <div class="welcome-card">
   <div class="welcome-brand"><div class="welcome-word">FRAGILES<br>VAULT</div><div class="welcome-emblem">F</div></div>
   <button class="welcome-play" id="welcome-play" type="button">PLAY</button>
