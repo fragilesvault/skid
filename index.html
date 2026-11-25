@@ -100,8 +100,12 @@ button,input,textarea,select{max-width:100%;font:inherit}
 .welcome-person{position:relative;align-self:flex-end;width:clamp(150px,25vw,290px);height:min(78vh,570px);flex:none}
 .welcome-head{position:absolute;top:0;left:34%;width:31%;height:19%;background:#080609;border-radius:48% 48% 45% 45%;transform:rotate(-8deg)}
 .welcome-body{position:absolute;top:19%;left:22%;width:55%;height:73%;background:#080609;border-radius:30% 30% 4% 4%;clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
-.welcome-arm{position:absolute;top:29%;width:13%;height:66%;background:#080609;border-radius:45%}
+.welcome-arm{position:absolute;top:29%;width:13%;height:63%;background:#080609;border-radius:45%}
 .welcome-arm.left{left:17%;transform:rotate(4deg)}.welcome-arm.right{right:13%;transform:rotate(-4deg)}
+.welcome-hand{position:absolute;top:87%;width:22%;height:10%;background:#080609;border-radius:48% 48% 38% 38%;z-index:2}
+.welcome-hand.left{left:9%;transform:rotate(9deg)}.welcome-hand.right{right:5%;transform:rotate(-9deg)}
+.welcome-hand i{position:absolute;top:48%;width:19%;height:68%;background:#080609;border-radius:0 0 45% 45%;transform-origin:top center}
+.welcome-hand i:nth-child(1){left:4%;height:57%;transform:rotate(9deg)}.welcome-hand i:nth-child(2){left:27%;height:76%;transform:rotate(3deg)}.welcome-hand i:nth-child(3){left:51%;height:72%;transform:rotate(-3deg)}.welcome-hand i:nth-child(4){left:75%;height:55%;transform:rotate(-10deg)}
 .welcome-card{width:min(390px,48vw);min-height:340px;padding:26px 22px 18px;background:#fffaf5;color:#31251e;box-shadow:0 10px 30px #8a3b2450;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px}
 .welcome-brand{position:relative;align-self:center;width:100%;padding:0 0 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#ed5426;font-weight:1000;line-height:.78;letter-spacing:-.08em}
 .welcome-word{order:1;font-size:clamp(40px,6vw,65px);text-shadow:2px 2px 0 #fff}
@@ -135,7 +139,7 @@ button,input,textarea,select{max-width:100%;font:inherit}
   <div class="rr-status">Loading into vault</div>
  </div>
 </div><div id="vault-welcome" aria-label="Welcome to Fragiles Vault">
- <div class="welcome-person" aria-hidden="true"><div class="welcome-head"></div><div class="welcome-body"></div><div class="welcome-arm left"></div><div class="welcome-arm right"></div></div>
+ <div class="welcome-person" aria-hidden="true"><div class="welcome-head"></div><div class="welcome-body"></div><div class="welcome-arm left"></div><div class="welcome-arm right"></div><div class="welcome-hand left"><i></i><i></i><i></i><i></i></div><div class="welcome-hand right"><i></i><i></i><i></i><i></i></div></div>
  <div class="welcome-card">
   <div class="welcome-brand"><div class="welcome-word">FRAGILES<br>VAULT</div><div class="welcome-emblem">F</div></div>
   <button class="welcome-play" id="welcome-play" type="button">PLAY</button>
