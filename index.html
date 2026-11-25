@@ -97,13 +97,15 @@ button,input,textarea,select{max-width:100%;font:inherit}
 /* Welcome screen shown after the existing loading sequence */
 #vault-welcome{position:fixed;inset:0;z-index:99998;display:flex;align-items:center;justify-content:center;gap:clamp(20px,7vw,110px);overflow:hidden;padding:24px;background:linear-gradient(112deg,#efa83e 0%,#f58b45 52%,#ff7548 100%);isolation:isolate}
 #vault-welcome:before{content:"";position:absolute;inset:-160px;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22170%22%20height%3D%22170%22%20viewBox%3D%220%200%20447%20447%22%3E%3Cpath%20d%3D%22M85%2080%2080%2091%2080%20359%2088%20373%2096%20379%20108%20383%20341%20383%20358%20375%20365%20367%20368%20359%20368%2090%20366%2084%20359%2075%20347%2068%20337%2066%20110%2066%2097%2070Z%20M105%20282%20108%20279%20119%20285%20120%20287%20144%20298%20150%20299%20152%20301%20156%20301%20159%20303%20182%20309%20211%20313%20245%20313%20282%20307%20310%20298%20341%20283%20343%20285%20343%20352%20341%20355%20337%20357%20303%20358%20111%20357%20107%20355%20105%20351Z%20M105%20141%20108%20138%20163%20138%20165%20140%20165%20231%20167%20234%20184%20235%20191%20233%20191%20140%20193%20138%20255%20138%20258%20142%20258%20233%20264%20235%20278%20235%20283%20233%20283%20141%20286%20138%20340%20138%20343%20140%20343%20249%20340%20253%20329%20260%20295%20276%20266%20284%20244%20287%20209%20287%20193%20285%20172%20280%20145%20270%20124%20259%20105%20245Z%20M105%2099%20106%2096%20112%2092%20335%2092%20339%2093%20342%2096%20343%20109%20341%20112%20107%20112%20105%20109Z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");background-size:170px 170px;opacity:.42;transform:rotate(-7deg) scaleX(-1);animation:rrPatternDrift 16s linear infinite}
-.welcome-person{position:relative;align-self:flex-end;width:clamp(170px,25vw,290px);height:min(68vh,470px);flex:none}
-.welcome-head{position:absolute;z-index:2;top:1%;left:30%;width:40%;height:23%;background:#080609;border-radius:38% 38% 34% 34%;transform:rotate(-4deg)}
-.welcome-body{position:absolute;top:23%;left:19%;width:62%;height:54%;background:#080609;border-radius:24% 24% 12% 12%;clip-path:none}
-.welcome-arm{position:absolute;z-index:1;top:29%;width:17%;height:46%;background:#080609;border-radius:48%}
-.welcome-arm.left{left:8%;transform:rotate(7deg)}.welcome-arm.right{right:6%;transform:rotate(-7deg)}
-.welcome-hand{position:absolute;z-index:3;top:70%;width:20%;height:11%;background:#080609;border-radius:48% 48% 44% 44%}
-.welcome-hand.left{left:6%;transform:rotate(8deg)}.welcome-hand.right{right:4%;transform:rotate(-8deg)}
+.welcome-person{position:relative;align-self:center;width:clamp(190px,27vw,310px);height:min(66vh,490px);flex:none}
+.welcome-head{position:absolute;z-index:3;top:1%;left:31%;width:38%;height:22%;background:#080609;border-radius:48% 48% 44% 44%;transform:rotate(-2deg)}
+.welcome-head:before{content:"";position:absolute;left:28%;top:39%;width:9%;height:9%;border-radius:50%;background:#efa83e;box-shadow:clamp(27px,3.1vw,34px) 0 0 #efa83e}
+.welcome-head:after{content:"";position:absolute;left:38%;top:61%;width:25%;height:10%;border-bottom:3px solid #efa83e;border-radius:0 0 50% 50%}
+.welcome-body{position:absolute;z-index:2;top:23%;left:17%;width:66%;height:51%;background:#080609;border-radius:18% 18% 7% 7%;clip-path:polygon(24% 0,76% 0,100% 10%,91% 100%,9% 100%,0 10%)}
+.welcome-arm{position:absolute;z-index:1;top:27%;width:19%;height:48%;background:#080609;border-radius:42% 42% 22% 22%}
+.welcome-arm.left{left:5%;transform:rotate(-5deg)}.welcome-arm.right{right:5%;transform:rotate(5deg)}
+.welcome-hand{position:absolute;z-index:3;top:68%;width:19%;height:13%;background:#080609;border-radius:35% 35% 30% 30%}
+.welcome-hand.left{left:4%;transform:rotate(-3deg)}.welcome-hand.right{right:4%;transform:rotate(3deg)}
 .welcome-card{width:min(390px,48vw);min-height:340px;padding:26px 22px 18px;background:#fffaf5;color:#31251e;box-shadow:0 10px 30px #8a3b2450;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px}
 .welcome-brand{position:relative;align-self:center;width:100%;padding:0 0 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#ed5426;font-weight:1000;line-height:.78;letter-spacing:-.08em}
 .welcome-word{order:1;font-size:clamp(40px,6vw,65px);text-shadow:2px 2px 0 #fff}
