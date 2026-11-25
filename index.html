@@ -97,15 +97,6 @@ button,input,textarea,select{max-width:100%;font:inherit}
 /* Welcome screen shown after the existing loading sequence */
 #vault-welcome{position:fixed;inset:0;z-index:99998;display:flex;align-items:center;justify-content:center;gap:clamp(20px,7vw,110px);overflow:hidden;padding:24px;background:linear-gradient(112deg,#efa83e 0%,#f58b45 52%,#ff7548 100%);isolation:isolate}
 #vault-welcome:before{content:"";position:absolute;inset:-160px;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22170%22%20height%3D%22170%22%20viewBox%3D%220%200%20447%20447%22%3E%3Cpath%20d%3D%22M85%2080%2080%2091%2080%20359%2088%20373%2096%20379%20108%20383%20341%20383%20358%20375%20365%20367%20368%20359%20368%2090%20366%2084%20359%2075%20347%2068%20337%2066%20110%2066%2097%2070Z%20M105%20282%20108%20279%20119%20285%20120%20287%20144%20298%20150%20299%20152%20301%20156%20301%20159%20303%20182%20309%20211%20313%20245%20313%20282%20307%20310%20298%20341%20283%20343%20285%20343%20352%20341%20355%20337%20357%20303%20358%20111%20357%20107%20355%20105%20351Z%20M105%20141%20108%20138%20163%20138%20165%20140%20165%20231%20167%20234%20184%20235%20191%20233%20191%20140%20193%20138%20255%20138%20258%20142%20258%20233%20264%20235%20278%20235%20283%20233%20283%20141%20286%20138%20340%20138%20343%20140%20343%20249%20340%20253%20329%20260%20295%20276%20266%20284%20244%20287%20209%20287%20193%20285%20172%20280%20145%20270%20124%20259%20105%20245Z%20M105%2099%20106%2096%20112%2092%20335%2092%20339%2093%20342%2096%20343%20109%20341%20112%20107%20112%20105%20109Z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");background-size:170px 170px;opacity:.42;transform:rotate(-7deg) scaleX(-1);animation:rrPatternDrift 16s linear infinite}
-.welcome-person{position:relative;align-self:center;width:clamp(190px,27vw,310px);height:min(66vh,490px);flex:none}
-.welcome-head{position:absolute;z-index:3;top:1%;left:31%;width:38%;height:22%;background:#080609;border-radius:48% 48% 44% 44%;transform:rotate(-2deg)}
-.welcome-head:before{content:"";position:absolute;left:28%;top:39%;width:9%;height:9%;border-radius:50%;background:#efa83e;box-shadow:clamp(27px,3.1vw,34px) 0 0 #efa83e}
-.welcome-head:after{content:"";position:absolute;left:38%;top:61%;width:25%;height:10%;border-bottom:3px solid #efa83e;border-radius:0 0 50% 50%}
-.welcome-body{position:absolute;z-index:2;top:23%;left:17%;width:66%;height:51%;background:#080609;border-radius:18% 18% 7% 7%;clip-path:polygon(24% 0,76% 0,100% 10%,91% 100%,9% 100%,0 10%)}
-.welcome-arm{position:absolute;z-index:1;top:27%;width:19%;height:48%;background:#080609;border-radius:42% 42% 22% 22%}
-.welcome-arm.left{left:5%;transform:rotate(-5deg)}.welcome-arm.right{right:5%;transform:rotate(5deg)}
-.welcome-hand{position:absolute;z-index:3;top:68%;width:19%;height:13%;background:#080609;border-radius:35% 35% 30% 30%}
-.welcome-hand.left{left:4%;transform:rotate(-3deg)}.welcome-hand.right{right:4%;transform:rotate(3deg)}
 .welcome-card{width:min(390px,48vw);min-height:340px;padding:26px 22px 18px;background:#fffaf5;color:#31251e;box-shadow:0 10px 30px #8a3b2450;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px}
 .welcome-brand{position:relative;align-self:center;width:100%;padding:0 0 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#ed5426;font-weight:1000;line-height:.78;letter-spacing:-.08em}
 .welcome-word{order:1;font-size:clamp(40px,6vw,65px);text-shadow:2px 2px 0 #fff}
@@ -115,8 +106,6 @@ button,input,textarea,select{max-width:100%;font:inherit}
 .welcome-sub{height:34px;border:1px solid #d5a28e;border-radius:6px;display:grid;place-items:center;color:#7e6257;font-size:11px;font-weight:800}
 .welcome-language{text-align:center;color:#66564e;font-size:11px;padding-top:3px}
 #vault-welcome.is-hidden{display:none}
-@media(max-width:600px){#vault-welcome{gap:8px;padding:14px}.welcome-person{width:31vw;height:48vh;min-width:90px}.welcome-card{width:min(62vw,340px);min-height:280px;padding:18px 14px}.welcome-word{font-size:clamp(30px,8vw,48px)}.welcome-emblem{width:46px;height:46px;font-size:30px;border-width:3px;right:0}.welcome-play{height:44px}}
-@media(max-width:380px){.welcome-person{width:27vw}.welcome-card{width:66vw;padding:14px 10px}.welcome-emblem{width:38px;height:38px;font-size:25px}}
 @media(prefers-reduced-motion:reduce){#vault-welcome:before{animation:none}}
 
 /* Correct logo placement: loader mark beside the wordmark; welcome mark above it */
@@ -129,26 +118,7 @@ button,input,textarea,select{max-width:100%;font:inherit}
 @media(max-width:600px){.rr-logo{flex-direction:row;gap:12px;min-height:190px}.rr-badge{width:clamp(76px,17vw,108px);height:clamp(76px,17vw,108px);font-size:clamp(48px,10vw,70px);border-width:6px}.rr-wordmark{font-size:clamp(38px,8.5vw,66px);-webkit-text-stroke:5px #fff}.welcome-brand{gap:10px}.welcome-emblem{width:44px;height:44px;font-size:29px}}
 
 
-/* Rebuild the welcome avatar using the actual Rec Room toy-like proportions */
-.welcome-person{position:relative;align-self:center;width:clamp(190px,27vw,310px);height:min(66vh,490px);flex:none}
-.welcome-head{position:absolute;z-index:4;top:0;left:31%;width:38%;height:23%;background:#080609;border-radius:49% 49% 45% 45%;transform:none}
-.welcome-head:before{content:"⌃  ⌃";position:absolute;top:29%;left:19%;width:62%;color:#efa83e;font:900 clamp(23px,3vw,34px)/1 Arial,sans-serif;letter-spacing:clamp(1px,.4vw,5px);text-align:center;white-space:nowrap}
-.welcome-head:after{content:"";position:absolute;left:38%;top:65%;width:25%;height:9%;border-bottom:3px solid #efa83e;border-radius:0 0 50% 50%}
-.welcome-body{position:absolute;z-index:2;top:23%;left:17%;width:66%;height:50%;background:#080609;border-radius:13% 13% 5% 5%;clip-path:polygon(27% 0,73% 0,100% 9%,94% 100%,6% 100%,0 9%)}
-.welcome-arm{position:absolute;z-index:1;top:27%;width:18%;height:47%;background:#080609;border-radius:40% 40% 22% 22%}
-.welcome-arm.left{left:4%;transform:rotate(-4deg);clip-path:polygon(20% 0,100% 8%,83% 100%,0 100%,0 18%)}
-.welcome-arm.right{right:4%;transform:rotate(4deg);clip-path:polygon(0 8%,80% 0,100% 18%,100% 100%,17% 100%)}
-.welcome-hand{position:absolute;z-index:3;top:67%;width:18%;height:14%;background:#080609;border-radius:24% 24% 18% 18%;clip-path:polygon(14% 0,85% 0,100% 100%,0 100%)}
-.welcome-hand.left{left:3%;transform:rotate(-5deg)}
-.welcome-hand.right{right:3%;transform:rotate(5deg)}
-@media(max-width:600px){.welcome-person{width:31vw;height:48vh;min-width:90px}.welcome-head:before{font-size:clamp(18px,5vw,25px)}}
-@media(max-width:380px){.welcome-person{width:27vw}}
 
-/* Use the provided avatar artwork instead of the CSS-drawn placeholder */
-.welcome-person{display:none!important}
-.welcome-person-image{display:block!important;visibility:visible!important;opacity:1!important;position:relative;z-index:2;align-self:center;flex:none;width:clamp(130px,34vw,290px);height:min(66vh,490px);object-fit:contain;object-position:center}
-@media(max-width:600px){.welcome-person-image{width:clamp(125px,38vw,190px);height:48vh;min-width:125px}}
-@media(max-width:380px){.welcome-person-image{width:clamp(115px,40vw,150px)}}
 </style></head><body><div id="vault-loader" role="status" aria-live="polite">
  <div class="rr-pattern" aria-hidden="true"></div>
  <div class="rr-loader-content">
@@ -160,7 +130,6 @@ button,input,textarea,select{max-width:100%;font:inherit}
   <div class="rr-status">Loading into vault</div>
  </div>
 </div><div id="vault-welcome" aria-label="Welcome to Fragiles Vault">
- <img class="welcome-person-image" src="assets/welcome-avatar.svg" alt="" aria-hidden="true">
  <div class="welcome-card">
   <div class="welcome-brand"><div class="welcome-word">FRAGILES<br>VAULT</div><div class="welcome-emblem">F</div></div>
   <button class="welcome-play" id="welcome-play" type="button">PLAY</button>
