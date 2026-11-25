@@ -115,14 +115,14 @@ button,input,textarea,select{max-width:100%;font:inherit}
 @media(max-width:380px){.welcome-person{width:27vw}.welcome-card{width:66vw;padding:14px 10px}.welcome-emblem{width:38px;height:38px;font-size:25px}}
 @media(prefers-reduced-motion:reduce){#vault-welcome:before{animation:none}}
 
-/* Layout corrections: keep the emblem separate from the wordmark */
-.rr-logo{flex-direction:column;gap:10px;justify-content:center}
-.rr-badge{position:relative;inset:auto;order:-1;width:clamp(64px,10vw,88px);height:clamp(64px,10vw,88px);border-width:5px;font-size:clamp(42px,6vw,58px);margin:0 auto 2px;flex:none}
-.rr-wordmark{position:relative;z-index:1}
+/* Correct logo placement: loader mark beside the wordmark; welcome mark above it */
+.rr-logo{flex-direction:row;align-items:center;justify-content:center;gap:clamp(18px,3vw,38px)}
+.rr-badge{position:relative;inset:auto;order:2;width:clamp(105px,15vw,150px);height:clamp(105px,15vw,150px);border-width:8px;font-size:clamp(62px,9vw,100px);margin:0;flex:none}
+.rr-wordmark{position:relative;z-index:1;order:1}
 .welcome-card{border-radius:22px}
 .welcome-brand{display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 0 22px}
 .welcome-emblem{position:relative;inset:auto;order:-1;width:52px;height:52px;margin:0 auto;border-width:3px;border-radius:10px;font-size:34px;flex:none}
-@media(max-width:600px){.rr-logo{gap:8px}.rr-badge{width:58px;height:58px;font-size:38px}.welcome-brand{gap:10px}.welcome-emblem{width:44px;height:44px;font-size:29px}}
+@media(max-width:600px){.rr-logo{flex-direction:row;gap:12px;min-height:190px}.rr-badge{width:clamp(76px,17vw,108px);height:clamp(76px,17vw,108px);font-size:clamp(48px,10vw,70px);border-width:6px}.rr-wordmark{font-size:clamp(38px,8.5vw,66px);-webkit-text-stroke:5px #fff}.welcome-brand{gap:10px}.welcome-emblem{width:44px;height:44px;font-size:29px}}
 
 </style></head><body><div id="vault-loader" role="status" aria-live="polite">
  <div class="rr-pattern" aria-hidden="true"></div>
