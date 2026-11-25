@@ -146,9 +146,9 @@ button,input,textarea,select{max-width:100%;font:inherit}
 
 /* Use the provided avatar artwork instead of the CSS-drawn placeholder */
 .welcome-person{display:none!important}
-.welcome-person-image{display:block;align-self:center;flex:none;width:clamp(190px,27vw,310px);height:min(66vh,490px);object-fit:contain;object-position:center}
-@media(max-width:600px){.welcome-person-image{width:31vw;height:48vh;min-width:90px}}
-@media(max-width:380px){.welcome-person-image{width:27vw}}
+.welcome-person-image{display:block!important;visibility:visible!important;opacity:1!important;position:relative;z-index:2;align-self:center;flex:none;width:clamp(130px,34vw,290px);height:min(66vh,490px);object-fit:contain;object-position:center}
+@media(max-width:600px){.welcome-person-image{width:clamp(125px,38vw,190px);height:48vh;min-width:125px}}
+@media(max-width:380px){.welcome-person-image{width:clamp(115px,40vw,150px)}}
 </style></head><body><div id="vault-loader" role="status" aria-live="polite">
  <div class="rr-pattern" aria-hidden="true"></div>
  <div class="rr-loader-content">
@@ -160,7 +160,7 @@ button,input,textarea,select{max-width:100%;font:inherit}
   <div class="rr-status">Loading into vault</div>
  </div>
 </div><div id="vault-welcome" aria-label="Welcome to Fragiles Vault">
- <img class="welcome-person-image" src="assets/welcome-avatar.jpg" alt="" aria-hidden="true">
+ <img class="welcome-person-image" src="assets/welcome-avatar.png" alt="" aria-hidden="true">
  <div class="welcome-card">
   <div class="welcome-brand"><div class="welcome-word">FRAGILES<br>VAULT</div><div class="welcome-emblem">F</div></div>
   <button class="welcome-play" id="welcome-play" type="button">PLAY</button>
