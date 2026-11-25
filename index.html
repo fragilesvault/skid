@@ -82,16 +82,16 @@ button,input,textarea,select{max-width:100%;font:inherit}
 @keyframes rrPatternDrift{from{background-position:0 0}to{background-position:340px 170px}}
 @keyframes rrLightSweep{0%,100%{background-position:120% 0}50%{background-position:-120% 0}}
 .rr-loader-content{position:relative;z-index:1;width:min(790px,90vw);display:flex;flex-direction:column;align-items:center;gap:24px;padding:28px 0;text-align:center}
-.rr-logo{position:relative;display:flex;align-items:center;justify-content:center;width:min(700px,90vw);min-height:330px;padding:28px 35px;background:transparent;border:0;border-radius:0;box-shadow:none;transform:rotate(-1deg);animation:rrLogoFloat 3.6s ease-in-out infinite}
-.rr-wordmark{font:1000 clamp(48px,8.6vw,108px)/.78 system-ui,Arial Black,sans-serif;letter-spacing:-.105em;text-align:center;color:#ff641f;-webkit-text-stroke:8px #fff;paint-order:stroke fill;text-shadow:0 5px 0 #d94d1d44;transform:scaleX(.96);white-space:nowrap;filter:drop-shadow(0 3px 0 #fff)}
+.rr-logo{position:relative;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:clamp(18px,3vw,38px);width:min(700px,90vw);min-height:260px;padding:28px 24px;background:transparent;border:0;border-radius:0;box-shadow:none;transform:rotate(-1deg);animation:rrLogoFloat 3.6s ease-in-out infinite}
+.rr-wordmark{order:1;font:1000 clamp(42px,7.8vw,100px)/.82 system-ui,Arial Black,sans-serif;letter-spacing:-.105em;text-align:left;color:#ff641f;-webkit-text-stroke:8px #fff;paint-order:stroke fill;text-shadow:0 5px 0 #d94d1d44;transform:scaleX(.96);white-space:nowrap;filter:drop-shadow(0 3px 0 #fff)}
 .rr-wordmark span{letter-spacing:-.09em;display:inline-block;transform:translateX(-.025em) scaleX(1.06)}
-.rr-badge{position:absolute;right:3%;top:-3%;width:clamp(105px,15vw,150px);height:clamp(105px,15vw,150px);display:grid;place-items:center;background:#ff641f;color:#fff;border:8px solid #fff;outline:0;border-radius:25px;font:1000 clamp(62px,9vw,100px)/1 system-ui,sans-serif;box-shadow:0 5px 0 #d94d1d44;transform:rotate(2deg)}
+.rr-badge{position:relative;flex:none;width:clamp(105px,15vw,150px);height:clamp(105px,15vw,150px);display:grid;place-items:center;background:#ff641f;color:#fff;border:8px solid #fff;outline:0;border-radius:25px;font:1000 clamp(62px,9vw,100px)/1 system-ui,sans-serif;box-shadow:0 5px 0 #d94d1d44;transform:rotate(2deg);order:2}
 @keyframes rrLogoFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
 .rr-progress{width:min(790px,90vw);height:30px;padding:3px;border:3px solid #fff;border-radius:10px;background:#ffffff30;box-shadow:0 3px 10px #8d351e22}
 .rr-progress-fill{height:100%;width:0;border-radius:5px;background:#ff641f;box-shadow:inset 0 0 0 2px #fff5;animation:rrLoadFill 7.5s cubic-bezier(.18,.75,.3,1) forwards}
 @keyframes rrLoadFill{0%{width:0}18%{width:24%}48%{width:52%}76%{width:74%}100%{width:91%}}
 .rr-status{font:700 clamp(16px,2.2vw,25px)/1.2 system-ui,Arial,sans-serif;color:#fff;text-shadow:0 2px 4px #9c471c33;letter-spacing:.01em}
-@media(max-width:600px){.rr-loader-content{gap:22px}.rr-logo{min-height:245px;padding:22px 15px}.rr-wordmark{font-size:clamp(53px,12vw,82px)}.rr-badge{right:0;top:-8px;border-width:6px;border-radius:20px}.rr-progress{height:24px;border-width:2px}}
+@media(max-width:600px){.rr-loader-content{gap:22px}.rr-logo{min-height:190px;padding:22px 10px;gap:12px}.rr-wordmark{font-size:clamp(38px,8.5vw,66px);-webkit-text-stroke:5px #fff}.rr-badge{width:clamp(76px,17vw,108px);height:clamp(76px,17vw,108px);border-width:6px;border-radius:20px;font-size:clamp(48px,10vw,70px)}.rr-progress{height:24px;border-width:2px}}
 @media(prefers-reduced-motion:reduce){#vault-loader:before,#vault-loader:after,.rr-logo,.rr-progress-fill{animation:none}.rr-progress-fill{width:85%}}
 
 /* Welcome screen shown after the existing loading sequence */
@@ -103,9 +103,9 @@ button,input,textarea,select{max-width:100%;font:inherit}
 .welcome-arm{position:absolute;top:29%;width:13%;height:66%;background:#080609;border-radius:45%}
 .welcome-arm.left{left:17%;transform:rotate(4deg)}.welcome-arm.right{right:13%;transform:rotate(-4deg)}
 .welcome-card{width:min(390px,48vw);min-height:340px;padding:26px 22px 18px;background:#fffaf5;color:#31251e;box-shadow:0 10px 30px #8a3b2450;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px}
-.welcome-brand{position:relative;align-self:center;width:100%;padding:0 0 22px;text-align:center;color:#ed5426;font-weight:1000;line-height:.78;letter-spacing:-.08em}
-.welcome-word{font-size:clamp(40px,6vw,65px);text-shadow:2px 2px 0 #fff}
-.welcome-emblem{position:absolute;right:4%;top:-16px;width:64px;height:64px;border:4px solid #ed5426;border-radius:8px;display:grid;place-items:center;font-size:43px;line-height:1}
+.welcome-brand{position:relative;align-self:center;width:100%;padding:0 0 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#ed5426;font-weight:1000;line-height:.78;letter-spacing:-.08em}
+.welcome-word{order:1;font-size:clamp(40px,6vw,65px);text-shadow:2px 2px 0 #fff}
+.welcome-emblem{position:relative;order:0;width:64px;height:64px;flex:none;border:4px solid #ed5426;border-radius:8px;display:grid;place-items:center;font-size:43px;line-height:1}
 .welcome-play{height:48px;border:0;border-radius:7px;background:#f04420;color:white;font-size:16px;font-weight:900;letter-spacing:.05em;cursor:pointer;box-shadow:0 3px 0 #c83218;transition:transform .15s,filter .15s}
 .welcome-play:hover{filter:brightness(1.08);transform:translateY(-2px)}.welcome-play:active{transform:translateY(1px)}
 .welcome-sub{height:34px;border:1px solid #d5a28e;border-radius:6px;display:grid;place-items:center;color:#7e6257;font-size:11px;font-weight:800}
