@@ -119,6 +119,47 @@ button,input,textarea,select{max-width:100%;font:inherit}
 
 
 
+
+/* Orange and dark-orange theme for the Discord-style vault interface */
+:root{--rail:#241006;--side:#351707;--main:#4a210b;--text:#fff3e8;--muted:#e7b99a;--blue:#f47718}
+body{background:var(--main);color:var(--text)}
+.rail{background:var(--rail)}
+.side{background:var(--side)}
+.server{border-bottom-color:#71330f}
+.logo,.av{background:#ed6810;color:#fff7ef}
+.ch{color:#d7a486}
+.ch:before{color:#b96b3c}
+.ch:hover{background:#57250c;color:#fff4e9}
+.ch[aria-current=page]{background:#78340d;color:#fff}
+.group{color:#d08c61}
+.join,.dl,.save{background:#e96a10;color:#fff}
+.join{box-shadow:0 0 0 1px #ff9a4a66,0 0 14px #e96a1055;animation:orangeDiscordGlow 2.8s ease-in-out infinite}
+.join:hover{background:#ff8427;box-shadow:0 5px 22px #e96a1099,0 0 0 1px #ffbd8a88}
+@keyframes orangeDiscordGlow{0%,100%{box-shadow:0 0 0 1px #ff9a4a55,0 0 12px #e96a1044}50%{box-shadow:0 0 0 1px #ffc08c99,0 0 22px #e96a10aa}}
+.join:before{background:linear-gradient(90deg,transparent,#fff7,transparent)}
+.top{border-bottom-color:#71330f}
+.top input{background:#291207;border-color:#71330f;color:#fff3e8}
+.msg:hover,.person:hover{background:#54250f}
+.av{background:#b94c0a}
+.dl,.save{background:#e96a10}
+.dl:hover,.save:hover{background:#ff8427}
+form{background:#351707;border-color:#71330f}
+input[type=text],input[type=url],input[type=password],textarea,select{background:#281207;border-color:#71330f;color:#fff3e8}
+.intro,.chat-meta time,.empty{color:#d7a486}
+.beta-banner{background:#3b1b09;border-color:#71330f;border-left-color:#ff8a24;color:#e7b99a}
+.beta-tag{border-color:#a84c16;color:#ffad70}
+.beta-banner strong{color:#ffe0c5}
+.beta-banner span:last-child{color:#e7b99a}
+.chat-feed,.chat-form{background:#351707;border-color:#71330f}
+.chat-text,.body p{color:#f3d7c4}
+.admin-panel{background:#160902dd}
+.admin-card{background:#351707;border-color:#a84c16}
+.admin-item{background:#4a210b;border-color:#71330f}
+.delete-btn{background:#a83d08}
+.admin-close{background:#71330f;color:#fff3e8}
+.status.ok{color:#72d69a}
+@media(prefers-reduced-motion:reduce){.join{animation:none}}
+
 </style></head><body><div id="vault-loader" role="status" aria-live="polite">
  <div class="rr-pattern" aria-hidden="true"></div>
  <div class="rr-loader-content">
